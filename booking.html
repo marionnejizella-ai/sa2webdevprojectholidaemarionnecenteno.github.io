@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Holiday</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Holidae</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="package.html">Packages</a>
+        </nav>
+    </header>
+
+    <section class="booking">
+        <h2>Book Your Dream Holiday</h2>
+
+        <!-- FIX: added id -->
+        <form class="booking-form" id="bookingForm">
+
+            <label>Full Name</label>
+            <input type="text" name="fullname" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Select Package</label>
+            <select name="package" required>
+                <option value="">Choose a package</option>
+                <option>Jumeirah Marsa Al Arab</option>
+                <option>Diamond Hotel</option>
+                  <option>Marina Bay Sands</option>
+                    <option>Hong Kong Disneyland</option>
+            </select>
+
+            <label>Travel Date</label>
+            <input type="date" name="date" required>
+
+            <label>Number of Guests</label>
+            <input type="number" name="guests" min="1" max="10" required>
+
+            <button type="submit" class="btn">Confirm Booking</button>
+
+        </form>
+
+        <!-- Message after submit -->
+        <p id="message" style="color: green; margin-top: 10px;"></p>
+    </section>
+
+    <footer>
+        <p>© 2026 Holidae</p>
+    </footer>
+
+    <!-- FIX: Prevent page reload -->
+    <script>
+        const form = document.getElementById("bookingForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault(); // STOP page reload
+
+            message.textContent = "✅ Booking successful! We will contact you soon.";
+
+            // Optional: reset form AFTER message
+            form.reset();
+        });
+    </script>
+
+<!-- FOOTER -->
+    <footer class="fade-in">
+
+        <p>© 2026 Holidae. All rights reserved.</p>
+
+    </footer>
+
+</body>
+</html>
